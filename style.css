@@ -32,8 +32,10 @@ html,body{
 #ptop{
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0px 30%;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    /* padding: 0px 30%; */
     width: 100%;
     height: 100px;
     background-color: rgb(73, 129, 73);
@@ -42,7 +44,7 @@ html,body{
 .elem{
 display: flex;
 align-items: center;
-gap: 20px;
+gap: 10px;
 
 }
 h2{
@@ -54,7 +56,7 @@ h2{
     background-color: white;
     border-radius: 5px;
     font-weight: 700;
-    /* background-color: rgb(73, 129, 73); */
+    color: rgb(73, 129, 73);
 }
 #pbtm{
     display: flex;
@@ -88,4 +90,8 @@ h2{
 .bubble:hover{
     background-color: rgb(141, 216, 141);
     cursor: pointer;
+}
+
+.game-over-container > h1>span{
+color: red;
 }

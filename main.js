@@ -22,7 +22,7 @@ function startTimer() {
       clearInterval(timerInv);
       document.querySelector(
         "#pbtm"
-      ).innerHTML = `<h1>Game Over Your Score : ${score}</h1>`;
+      ).innerHTML = `<div class="game-over-container"><h1>Game Over Your Score : <span>${score}</span></h1></div>`;
     }
   }, 1000);
 }
@@ -38,15 +38,17 @@ function increaseScore() {
 }
 
 document.querySelector("#pbtm").addEventListener("click", function (evnt) {
-  console.log(evnt.target.textContent);
-  //   let hitValu = Number(document.querySelector("#hitVal").textContent);
+  console.log("(evnt.target):", evnt);
+
   let selecteValue = Number(evnt.target.textContent);
   if (hitVal === selecteValue) {
     increaseScore();
     makeBubble();
     makeHit();
   } else {
-    evnt.target.style.backgroundColor = "red";
+    evnt.target.attributes[0].nodeValue === "bubble"
+      ? (evnt.target.style.backgroundColor = "red")
+      : null;
   }
 });
 
