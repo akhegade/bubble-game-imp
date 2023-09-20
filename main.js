@@ -1,4 +1,4 @@
-let timer = 30;
+let timer = 60;
 let score = 0;
 let hitVal = 0;
 function updateTimerVal(val) {
