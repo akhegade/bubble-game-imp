@@ -95,3 +95,14 @@ h2{
 .game-over-container > h1>span{
 color: red;
 }
+
+@media only screen and (max-width: 600px){
+    #ptop{
+        /* background-color: red; */
+        flex-direction: column;
+        justify-content: center;
+        gap: 1px;
+        flex-wrap: nowrap;
+        
+    }
+}

@@ -5,6 +5,10 @@ function updateTimerVal(val) {
   document.querySelector("#timeVal").textContent = val;
 }
 
+function updateScoreVal(val) {
+  document.querySelector("#scoreVal").textContent = val;
+}
+
 function makeBubble() {
   let clutter = "";
   for (let i = 1; i <= 170; i++) {
@@ -22,7 +26,7 @@ function startTimer() {
       clearInterval(timerInv);
       document.querySelector(
         "#pbtm"
-      ).innerHTML = `<div class="game-over-container"><h1>Game Over Your Score : <span>${score}</span></h1></div>`;
+      ).innerHTML = `<div class="game-over-container"><h1>Game Over, Your Score : <span>${score}</span></h1><button id="#restart" onclick="onReStart()">Restart The Game</button></div>`;
     }
   }, 1000);
 }
@@ -51,6 +55,16 @@ document.querySelector("#pbtm").addEventListener("click", function (evnt) {
       : null;
   }
 });
+
+function onReStart() {
+  timer = 60;
+  score = 0;
+  updateTimerVal(timer);
+  makeBubble();
+  makeHit();
+  startTimer();
+  updateScoreVal(score);
+}
 
 updateTimerVal(timer);
 makeBubble();
